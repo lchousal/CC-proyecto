@@ -1,5 +1,6 @@
 # CC-proyecto
-  Repositorio para el proyecto de la asignatura Cloud Computing
+
+[Web del proyecto](https://lchousal.github.io/CC-proyecto/)
 
 ## Descripción del problema
 
@@ -16,7 +17,6 @@
   - Almacenamiento de los datos en una base de datos. Se utilizará mysql para la creación de la BBDD
   - Servicio que gestionara el repositorio de partituras. Se implementará con el lenguaje de programación Python
 
-
 ## Arquitectura
 
   Se utilizará una arquitectura basada en microservicios.
@@ -24,7 +24,15 @@
 ## Provision
 
   Para la realización del provisionamiento de los servicios necesarios se utiliza Ansible.
-  Se provisionarán los siguientes paquetes: git, python3, python3-pip, apache2 y mysql-server
+  Se provisionarán los siguientes paquetes: git, python3, python3-pip, apache2 y mysql-server.
+  Para una descripción más detallada de los pasos a seguir: [provision](https://github.com/lchousal/CC-proyecto/blob/gh-pages/provision.md)
+
+## Automatización
+
+  Se ha reaizado la automatización de la creación y provisionamiento de las máquinas virutales con el cliente de azure.
+  Se ha utilizado una imagen de Ubuntu 16.04 para la creación de la máquina.
+  Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/provision.md)
+  Despliegue: 52.147.58.64
 
 ## Licencia
 
