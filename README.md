@@ -1,6 +1,6 @@
 # CC-proyecto
 
-[Web del proyecto](https://lchousal.github.io/CC-proyecto/)
+[Web del proyecto](https://lchousal.github.io/CC-proyecto/index)
 
 ## Descripción del problema
 
