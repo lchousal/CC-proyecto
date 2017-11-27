@@ -31,7 +31,7 @@
 
   Se ha reaizado la automatización de la creación y provisionamiento de las máquinas virutales con el cliente de azure.
   Se ha utilizado una imagen de Ubuntu 16.04 para la creación de la máquina.
-  Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/provision.md)
+  Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/automatizacion.md)
   Despliegue: 52.147.58.64
 
 ## Licencia
