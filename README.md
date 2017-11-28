@@ -36,7 +36,7 @@
 
   Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/automatizacion.md)
 
-  Despliegue: 52.147.58.64
+  Despliegue: 13.95.174.48
 
 ## Licencia
 
