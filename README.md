@@ -25,7 +25,7 @@
 
   Para la realización del provisionamiento de los servicios necesarios se utiliza Ansible. Se ha escogido un provisionamiento con ansible ya que es una herramienta simple de utilizar y solo requiere tener instaldo python.
   Se provisionarán los siguientes paquetes: git, python3, python3-pip, apache2 y mysql-server.
-  El provisionamiento se ha probado en máquinas de Amazon Web Services.
+  El provisionamiento se ha probado en máquinas de Amazon Web Services ya que es ácil de usar.
 
   Para una descripción más detallada de los pasos a seguir: [provision](https://github.com/lchousal/CC-proyecto/blob/gh-pages/provision.md)
 
@@ -35,7 +35,7 @@
   Se ha utilizado una imagen de Ubuntu 16.04 para la creación de la máquina, esta elección se basa en la familiaridad con este SO por mi parte.
 
   Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/automatizacion.md)
-  
+
   Despliegue: 52.147.58.64
 
 ## Licencia
