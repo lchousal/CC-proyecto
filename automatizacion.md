@@ -1,17 +1,8 @@
 # Hito 3, automatización de la creación de máquinas virutales
 
-## Instalacines
+## Instalaciones
 
-Para poder realizar el provisionamiento tenemos que instalar ansible de la siguiente forma:
-```
-sudo apt-get update
-sudo apt-get install python
-sudo apt-get install software-properties-common
-sudo apt-add-repository ppa:ansible/ansible
-sudo apt-get update
-sudo apt-get install ansible
-```
-También hay que instalar jq:
+Para poder realizar el provisionamiento tenemos que instalar ansible. También hay que instalar jq:
 ```
 sudo apt-get install jq
 ```
