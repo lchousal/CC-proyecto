@@ -23,15 +23,19 @@
 
 ## Provision
 
-  Para la realización del provisionamiento de los servicios necesarios se utiliza Ansible.
+  Para la realización del provisionamiento de los servicios necesarios se utiliza Ansible. Se ha escogido un provisionamiento con ansible ya que es una herramienta simple de utilizar y solo requiere tener instaldo python.
   Se provisionarán los siguientes paquetes: git, python3, python3-pip, apache2 y mysql-server.
+  El provisionamiento se ha probado en máquinas de Amazon Web Services.
+
   Para una descripción más detallada de los pasos a seguir: [provision](https://github.com/lchousal/CC-proyecto/blob/gh-pages/provision.md)
 
 ## Automatización
 
-  Se ha reaizado la automatización de la creación y provisionamiento de las máquinas virutales con el cliente de azure.
-  Se ha utilizado una imagen de Ubuntu 16.04 para la creación de la máquina.
+  Se ha reaizado la automatización de la creación y provisionamiento de las máquinas virutales con el cliente de azure.Se ha escogido azure para probar otra tecnología de servivicios en la nube.
+  Se ha utilizado una imagen de Ubuntu 16.04 para la creación de la máquina, esta elección se basa en la familiaridad con este SO por mi parte.
+
   Para una descripción más detallada de los pasos a seguir: [automatizacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/automatizacion.md)
+  
   Despliegue: 52.147.58.64
 
 ## Licencia
