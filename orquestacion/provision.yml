@@ -1,0 +1,10 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Intalar paquetes
+      apt: pkg=git state=present
+      apt: pkg=python3 state=present
+      apt: pkg=python3-pip state=present
+      apt: pkg=apache2 state=present
+      apt: pkg=mysql-server state=present
