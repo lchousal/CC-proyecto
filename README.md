@@ -38,6 +38,15 @@
 
   Despliegue:52.174.7.180
 
+
+## Orquestación
+
+  Se ha realizado la orquestación con Vagrant por su compatibilidad con el cliente de azure.
+  Para una descripción más detallada de los pasos a seguir: [orquestacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/orquestacion.md)
+
+  Despliegue Vagrant:13.95.83.41
+  
+
 ## Licencia
 
   Este proyecto será liberado bajo la licencia [GNU GLP V3]
