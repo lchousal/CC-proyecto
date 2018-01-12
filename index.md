@@ -128,6 +128,139 @@
   Si todo sale correctamente deberíamos obtener el siguiente resultado:
   ![acopio](https://user-images.githubusercontent.com/10090976/33264366-861d7d0a-d36d-11e7-9891-2acc34332246.png)
 
+## Orquestación
+
+  Se ha realizado la orquestación con Vagrant por su compatibilidad con el cliente de azure.
+
+### Pasos a seguir
+
+  Para realizar la orquestación de este proyecto hay que tener instalado ansible y el cliente de azure.
+
+  También debemos instalar vagrant, he utilizado la versión 2.0.1. Es necesario también el plugin de azure en la versión 2.0.0.
+
+  ##Creación de la orquestación
+
+  Antes de nada debemos loguearnos en el cliente de azure.
+  Para poder crear las máquinas virtuales necesitamos la siguiente información sobre nuestra cuenta:
+    - tenant id
+    - client id
+    - client secret
+    - subscription id
+
+  Para ello utilizaremos los siguientes comandos:
+  ```
+  az add create-for-rbac
+  az account list --query "[?isDefault].id" -o tsv
+  ```
+  Después debemos de crear el archivo VagrantFile
+  ```
+  Vagrant.configure("2") do |config|
+
+    config.vm.define "remoteLucia1" do |serviceObject|
+      serviceObject.vm.box = 'azure'
+
+      serviceObject.ssh.private_key_path = '~/.ssh/id_rsa'
+
+      serviceObject.vm.provider :azure do |azure, override|
+        #Set a territory
+        azure.location="westeurope"
+
+        azure.resource_group_name="grupoLucia"
+        azure.vm_name="remoteLucia1"
+
+        azure.vm_image_urn="credativ:Debian:8:latest"
+
+        azure.tenant_id = ENV['AZURE_TENANT_ID']
+        azure.client_id = ENV['AZURE_CLIENT_ID']
+        azure.client_secret = ENV['AZURE_CLIENT_SECRET']
+        azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+      end
+      serviceObject.vm.provision "ansible" do |ansible|
+        ansible.playbook = "provision.yml"
+      end
+    end
+
+    config.vm.define "remoteLucia2" do |serviceImage|
+      serviceImage.vm.box = 'azure'
+
+      serviceImage.ssh.private_key_path = '~/.ssh/id_rsa'
+
+      serviceImage.vm.provider :azure do |azure, override|
+        #Set a territory
+        azure.location="westeurope"
+
+        azure.resource_group_name="grupoLucia"
+        azure.vm_name="remoteLucia2"
+
+        azure.vm_image_urn="credativ:Debian:8:latest"
+
+        azure.tenant_id = ENV['AZURE_TENANT_ID']
+        azure.client_id = ENV['AZURE_CLIENT_ID']
+        azure.client_secret = ENV['AZURE_CLIENT_SECRET']
+        azure.subscription_id = ENV['AZURE_SUBSCRIPTION_ID']
+
+      end
+      serviceImage.vm.provision "ansible" do |ansible|
+        ansible.playbook = "provision.yml"
+      end
+    end
+  end
+  ```
+  Esta vez se ha utilizado una imagen de Debian 8 para probar su funcionamiento.
+
+  Finalmente ejecutaremos el archivo vagrantFile con el siguiente comando
+  ```
+   vagrant up --no-parallel
+  ```
+
+
+## Contenedores
+
+  Se ha utilizado Docker para el despliegue de aplicaciones en Contenedores. El servicio se proporciona a través de una imagen de debian, que se ha aprovisionado a través del fichero Dockerfile.
+
+### Pasos a seguir
+
+  Se ha creado una cuenta y se ha enlazado con el repositorio del proyecto de github (https://hub.docker.com/r/lchousal/cc-proyecto/)
+
+  ## Contenedores
+
+  Para la creación del contenedor Docker utilzo el siguiente archivo Dockerfile
+
+  ```
+  FROM debian:stable
+  MAINTAINER Lucia Chousal Rodriguez
+
+  RUN apt-get update -y && \
+      apt-get install -y python-pip python-dev
+
+  WORKDIR /app
+
+  RUN pip install flask
+
+  COPY contenedores/service.py /app
+
+  ENTRYPOINT ["python"]
+  CMD ["service.py"]
+  ```
+
+  ### Desliegue en azure
+
+  Se ejecutan los siguientes comandos:
+
+  ```
+  az webapp deployment user set --user-name lchousal --password $password
+
+  az group create --name proyectoDocker --location "West Europe"
+
+  az webapp create --resource-group proyectoDocker --plan planProyecto --name proyectoServicio --deployment-container-image-name lchousal/cc-proyecto
+
+  az webapp config appsettings set -g proyectoDocker -n proyectoServicio --settings PORT=5000
+  ```
+
+  Finalmente compribamos que el servicio funciona correctamente
+  ![ok](https://user-images.githubusercontent.com/10090976/34886046-2cd68b8c-f7c2-11e7-9327-00df713ddab8.jpeg)
+
 
 ## Licencia
 
