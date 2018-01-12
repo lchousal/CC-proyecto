@@ -45,7 +45,15 @@
   Para una descripción más detallada de los pasos a seguir: [orquestacion](https://github.com/lchousal/CC-proyecto/blob/gh-pages/orquestacion.md)
 
   Despliegue Vagrant:13.95.83.41
-  
+
+## Contenedores
+
+  Se ha utilizado Docker para el despliegue de aplicaciones en Contenedores. El servicio se proporciona a través de una imagen de debian, que se ha aprovisionado a través del fichero Dockerfile.
+  Para una descripción más detallada de los pasos a seguir: [contenedores](https://github.com/lchousal/CC-proyecto/blob/gh-pages/conntenedores.md)
+
+  Contenedor:https://proyectoservicio.azurewebsites.net/
+  Dockerhub:https://hub.docker.com/r/lchousal/cc-proyecto/
+
 
 ## Licencia
 
