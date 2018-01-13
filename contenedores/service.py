@@ -2,7 +2,7 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route('/')
-def estadoOk():
+def estOk():
     return jsonify({'status':'OK'})
 
 @app.route('/status/')
