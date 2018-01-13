@@ -49,7 +49,7 @@
 ## Contenedores
 
   Se ha utilizado Docker para el despliegue de aplicaciones en Contenedores. El servicio se proporciona a través de una imagen de debian, que se ha aprovisionado a través del fichero Dockerfile.
-  Para una descripción más detallada de los pasos a seguir: [contenedores](https://github.com/lchousal/CC-proyecto/blob/gh-pages/contenedores.md)
+  Para una descripción más detallada de los pasos a seguir: [enlace](https://github.com/lchousal/CC-proyecto/blob/gh-pages/contenedores.md)
 
   Contenedor:https://proyectoservicio.azurewebsites.net/
 
