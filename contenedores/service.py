@@ -2,11 +2,11 @@ from flask import Flask, jsonify
 app = Flask(__name__)
 
 @app.route('/')
-def status_ok():
+def estadoOk():
     return jsonify({'status':'OK'})
 
 @app.route('/status/')
-def status_ok():
+def estadoOk():
     return jsonify({'status':'OK'})
 
 if __name__ == "__main__":
