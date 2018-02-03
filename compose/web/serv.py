@@ -24,7 +24,7 @@ def uploadFile():
 
       with open('datos.json', 'w') as p:
           aux = json.dump(partiturasList,p)
-      return redirect(url_for('partituras'))
+      return redirect('/partituras')
     return render_template('inicio.html')
 
 @app.route('/partituras', methods = ['GET'])

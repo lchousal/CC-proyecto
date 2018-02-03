@@ -55,7 +55,14 @@
 
   Dockerhub:https://hub.docker.com/r/lchousal/cc-proyecto/
 
+## Composición
+
+  Se ha utilizado Docker compose para la composición de servicios en contenedores docker. El servicio se proporciona a través de una imagen de alpine con python, que se ha aprovisionado a través del fichero Dockerfile.Se ha utilizado esta imagen por ser mucho más pequeña la mayoría de imagenes.
+Para el contenedor volumen se ha utilizado la imagen busybox, esta imagen también se ha elegido por su pequeño tamaño y proporcionaa la funcionalidad esperada de que otros sitemas GNU homólogos.
+  Para una descripción más detallada de los pasos a seguir: [enlace](https://github.com/lchousal/CC-proyecto/blob/gh-pages/composicion.md)
+
+  Hito6:http://lchousalhito6cc.eastus.cloudapp.azure.com:5000/
 
 ## Licencia
 
-  Este proyecto será liberado bajo la licencia [GNU GLP V3]
+  Este proyecto será liberado bajo la licencia [GNU GPL V3]
