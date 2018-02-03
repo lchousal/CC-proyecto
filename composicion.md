@@ -68,4 +68,6 @@ sudo docker-compose up -d
 ```
 y accedemos al servicio através de la siguiente dirección: http://lchousalhito6cc.eastus.cloudapp.azure.com:5000/
 
+Para ver la información almacenada en el archivo json accedemos al siguiente enlace: http://lchousalhito6cc.eastus.cloudapp.azure.com:5000/partituras
+
 
